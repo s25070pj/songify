@@ -1,4 +1,4 @@
-package com.songify.model;
+package com.songify.song.dto;
 
 import java.util.List;
 import java.util.Map;
