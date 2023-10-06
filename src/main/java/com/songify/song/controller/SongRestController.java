@@ -47,6 +47,9 @@ public class SongRestController {
     @GetMapping("/songs/{id}")
     public ResponseEntity<SingleSongResponseDto> getSongById(@PathVariable Integer id, @RequestHeader(required = false) String requestId) throws RuntimeException {
         log.info(requestId);
+        if (!database.containsKey(id)) {
+            throw new SongNotFoundException("Song with id: " + id + " not found");
+        }
         String song = database.get(id);
         if (song == null) {
             return ResponseEntity.notFound().build();
