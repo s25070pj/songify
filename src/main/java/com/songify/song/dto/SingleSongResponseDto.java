@@ -1,9 +1,0 @@
-package com.songify.song.dto;
-
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-
-public record SingleSongResponseDto(
-        String song
-) {
-}
